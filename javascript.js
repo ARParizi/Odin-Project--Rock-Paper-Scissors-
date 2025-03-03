@@ -6,6 +6,8 @@ while (false) {
     console.log(`Winner is: ${getWinner(answer.toLowerCase(), computerChoice.toLowerCase())}`);   
 }
 
+setupEventHandlers();
+
 function getComputerChoice() {
     let randomInt = Math.floor(3 * Math.random());
     switch (randomInt) {
@@ -40,4 +42,22 @@ function getWinner(playerChoice, computerChoice) {
             break;
     }
     return 'Computer';
+}
+
+function setupEventHandlers(){
+    const btnRock     = document.querySelector('#btn-rock');
+    const btnPaper    = document.querySelector('#btn-paper');
+    const btnScissors = document.querySelector('#btn-scissors');
+
+    btnRock    .addEventListener('click', () => btnClick('Rock'))
+    btnPaper   .addEventListener('click', () => btnClick('Paper'))
+    btnScissors.addEventListener('click', () => btnClick('Scissors'))
+}
+
+function btnClick(answer){
+    let computerChoice = getComputerChoice();
+    const theDiv = document.querySelector('#div-main');
+    theDiv.innerText = `You chose: ${answer}, computer chose: ${computerChoice}; ` +
+                       `Winner is: ${getWinner(answer.toLowerCase(), 
+                                               computerChoice.toLowerCase())}`;
 }
