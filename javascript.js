@@ -1,4 +1,4 @@
-while (true) {
+while (false) {
     let answer = prompt("Please enter 'Rock', 'Paper', or 'Scissors'");
     console.log(`You chose ${answer}`);
     let computerChoice = getComputerChoice();
