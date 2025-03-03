@@ -1,11 +1,3 @@
-while (false) {
-    let answer = prompt("Please enter 'Rock', 'Paper', or 'Scissors'");
-    console.log(`You chose ${answer}`);
-    let computerChoice = getComputerChoice();
-    console.log(`Computer chose ${computerChoice}`);
-    console.log(`Winner is: ${getWinner(answer.toLowerCase(), computerChoice.toLowerCase())}`);   
-}
-
 setupEventHandlers();
 
 function getComputerChoice() {
